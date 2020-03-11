@@ -4,7 +4,8 @@
   "description": "A basic track management system for managing double elimination, two track drag races, with a psuedo-random driving pool",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Zynh0722/TrackManagementSystem/issues"
   },
-  "homepage": "https://github.com/Zynh0722/TrackManagementSystem#readme"
+  "homepage": "https://github.com/Zynh0722/TrackManagementSystem#readme",
+  "devDependencies": {
+    "electron": "^8.1.1"
+  }
 }
