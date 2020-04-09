@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Zynh0722/TrackManagementSystem#readme",
   "devDependencies": {
-    "electron": "^8.1.1"
+    "electron": "^8.2.1"
+  },
+  "dependencies": {
+    "interactjs": "^1.9.9"
   }
 }

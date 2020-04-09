@@ -8,7 +8,8 @@ function createWindow () {
         webPreferences: {
             nodeIntegration: true,
             devTools: false,
-        }
+        },
+        fullscreen: true
     });
 
     // win.setMenu(null);
