@@ -1,3 +1,5 @@
+import interact from 'interactjs'
+
 const { app, BrowserWindow } = require('electron');
 
 function createWindow () {
