@@ -4,7 +4,7 @@
   "description": "A basic track management system for managing double elimination, two track drag races, with a psuedo-random driving pool",
   "main": "main.js",
   "scripts": {
-    "test": "mocha",
+    "test": "true",
     "start": "electron ."
   },
   "repository": {
