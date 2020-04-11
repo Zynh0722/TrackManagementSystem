@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <title>Hello World!</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 </head>
 <body>
-<section>
-    <div class='item'>I'm an item</div>
-    <div class='item'>I'm an item</div>
-    <div class='item'>I'm an item</div>
+<div id="drag" draggable="true">Draggable Item</div>
+<div id="drop" droppable="foobar" multi >Droppable Area</div>
 
-    <div class="dropzone">
-        <h3>Dropzone</h3>
-    </div>
-</section>
-<h1>Hello World!</h1>
-We are using node <script>document.write(process.versions.node)</script>,
-Chrome <script>document.write(process.versions.chrome)</script>,
-and Electron <script>document.write(process.versions.electron)</script>.
+<script>
+    const {drag, droppable, addon} = require('electron-drag-drop');
+
+    // drag
+    let dragEL = document.getElementById('drag');
+
+    dragEL.addEventListener('dragstart', event => {
+        drag.start(event.dataTransfer, {
+            effect: 'copy',
+            type: 'foobar',
+            items: 'Hello World!',
+        });
+    });
+    dragEL.addEventListener('dragend', event => {
+        drag.end();
+    });
+
+    // drop
+    let dropEL = document.getElementById('drop');
+
+    addon(dropEL, droppable);
+    dropEL._initDroppable(dropEL);
+    dropEL.addEventListener('drop-area-move', event => {
+        drag.updateDropEffect(event.detail.dataTransfer, 'copy');
+    });
+</script>
 </body>
 </html>

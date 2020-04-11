@@ -1,6 +1,6 @@
-import interact from 'interactjs'
-
 const { app, BrowserWindow } = require('electron');
+
+require('electron-drag-drop');
 
 function createWindow () {
     // Create the browser window.

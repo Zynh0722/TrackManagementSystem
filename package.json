@@ -21,6 +21,6 @@
     "electron": "^8.2.1"
   },
   "dependencies": {
-    "interactjs": "^1.9.9"
+    "electron-drag-drop": "^1.1.0"
   }
 }
