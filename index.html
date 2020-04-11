@@ -3,20 +3,22 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Track Management System</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
 </head>
-<body>
+    <body>
 
-<div class="empty">
-    <div class="fill" draggable="true"></div>
-</div>
-<div class="empty"></div>
-<div class="empty"></div>
-<div class="empty"></div>
-<div class="empty"></div>
+        <div id="queue">
+            <div class="empty">
+                <div class="fill" draggable="true"></div>
+            </div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+        </div>
 
-<script src="renderer.js"></script>
-</body>
+        <script src="renderer.js"></script>
+    </body>
 </html>

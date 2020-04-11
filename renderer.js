@@ -20,7 +20,7 @@ for (const empty of  empties) {
 
 function dragStart() {
     this.className += ' hold';
-    setTimeout(() => this.className = 'invisible', 0);
+    setTimeout(() => this.className = 'invisible', 5);
 }
 
 function dragEnd() {

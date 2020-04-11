@@ -9,16 +9,16 @@ function createWindow () {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
-            devTools: false,
+            devTools: true
         },
         fullscreen: true
     });
 
     // win.setMenu(null);
-    win.removeMenu();
+    // win.removeMenu();
 
     // and load the index.html of the app.
-    win.loadFile('index.html').then();
+    win.loadFile('index.html').then(() => console.log("Index.html Loaded!"));
 }
 
 // This method will be called when Electron has finished
