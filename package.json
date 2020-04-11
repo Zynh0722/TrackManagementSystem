@@ -4,7 +4,7 @@
   "description": "A basic track management system for managing double elimination, two track drag races, with a psuedo-random driving pool",
   "main": "main.js",
   "scripts": {
-    "test": "true",
+    "test": "true && ava",
     "start": "electron ."
   },
   "repository": {
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Zynh0722/TrackManagementSystem#readme",
   "devDependencies": {
+    "ava": "^3.6.0",
     "electron": "^8.1.1"
   }
 }
