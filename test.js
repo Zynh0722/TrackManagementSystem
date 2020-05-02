@@ -1,4 +1,6 @@
-const test = require('ava');
+const test = require('ava')
+
+const {Vehicle, Driver} = require('./src/classes');
 
 test('foo', t => {
     t.pass();

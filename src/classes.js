@@ -21,3 +21,6 @@ class Driver {
         this.email = email;
     }
 }
+
+exports.Vehicle = Vehicle;
+exports.Driver = Driver;
