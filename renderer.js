@@ -20,8 +20,10 @@ for (const empty of  empties) {
 
 function dragStart() {
     console.log("dragStart");
-    this.className += ' hold';
-    setTimeout(() => this.className = 'invisible', 5);
+    if (this.contains(fill)) {
+        this.className += ' hold';
+        setTimeout(() => this.className = 'invisible', 5);
+    }
 }
 
 function dragEnd() {
