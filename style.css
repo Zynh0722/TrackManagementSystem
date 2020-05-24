@@ -37,10 +37,10 @@ body {
 
 #leftPanel {
     position: absolute;
-    left: 5px;
-    top: 5px;
-    width: 647px;
-    height: 1050px;
+    left: 0.5vw;
+    top: 0.5vh;
+    width: 32.75vw;
+    height: 99vh;
     background-color: gray;
     border-radius: 10px;
 }
@@ -50,10 +50,10 @@ body {
     display: grid;
     grid-template-rows: 20% 20% 20% 20% 20%;
     grid-template-columns: 25% 25% 25% 25%;
-    right: 5px;
-    top: 5px;
-    width: 1254px;
-    height: 1050px;
+    right: 0.5vw;
+    top: 0.5vh;
+    width: 65.75vw;
+    height: 99vh;
     background-color: gray;
     border-radius: 10px;
 }
