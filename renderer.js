@@ -5,11 +5,13 @@
 // selectively enable features needed in the rendering
 // process.
 
-const fill = document.querySelector('.fill');
+const driver = document.querySelector('.driver');
 const empties = document.querySelectorAll('.empty');
 
-fill.addEventListener('dragstart', dragStart);
-fill.addEventListener('dragend', dragEnd);
+var pickedADriver = false;
+
+driver.addEventListener('dragstart', dragStart);
+driver.addEventListener('dragend', dragEnd);
 
 for (const empty of  empties) {
     empty.addEventListener('dragover', dragOver);
@@ -20,15 +22,18 @@ for (const empty of  empties) {
 
 function dragStart() {
     console.log("dragStart");
-    if (this.contains(fill)) {
+    if (this.contains(driver)) {
+        pickedADriver = true;
+        console.log("HAS A DRIVER");
         this.className += ' hold';
-        setTimeout(() => this.className = 'invisible', 5);
+        setTimeout(() => this.className = 'invisible', 10);
     }
 }
 
 function dragEnd() {
     console.log("dragEnd");
-    this.className = 'fill';
+    this.className = 'driver';
+    pickedADriver = false;
 }
 
 function dragOver(e) {
@@ -37,20 +42,26 @@ function dragOver(e) {
 }
 
 function dragEnter(e) {
-    console.log("dragEnter");
-    e.preventDefault();
-    this.className += ' hovered';
+    if(pickedADriver) {
+        console.log("dragEnter");
+        e.preventDefault();
+        this.className += ' hovered';
+    }
 }
 
 function dragLeave() {
-    console.log("dragLeave");
-    this.className = 'empty';
+    if (pickedADriver) {
+        console.log("dragLeave");
+        this.className = 'empty';
+    }
 }
 
 function dragDrop() {
-    console.log("dragDrop");
-    this.className = 'empty';
-    this.append(fill);
+    if(pickedADriver) {
+        console.log("dragDrop");
+        this.className = 'empty';
+        this.append(driver);
+    }
 }
 
 

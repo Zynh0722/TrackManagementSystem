@@ -1,25 +1,29 @@
-
+:root {
+    --border-radius: 10px;
+}
 
 body {
     background: #444444;
 }
 
-.fill {
+.driver {
     background-image: url("https://source.unsplash.com/random/235x135");
     position: relative;
     height: 135px;
     width: 235px;
-    top: 5px;
-    left: 5px;
+    margin: 5px;
+    /*top: 5px;*/
+    /*left: 5px;*/
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 .empty {
-    margin: 30px;
+    display: grid;
+    margin: 20px;
     border: 3px darkgrey solid;
     background-color: white;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 .hold {
@@ -37,12 +41,12 @@ body {
 
 #leftPanel {
     position: absolute;
-    left: 5px;
-    top: 5px;
-    width: 647px;
-    height: 1050px;
+    left: 0.5vw;
+    top: 0.5vh;
+    width: 32.75vw;
+    height: 99vh;
     background-color: gray;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 #pool {
@@ -50,35 +54,63 @@ body {
     display: grid;
     grid-template-rows: 20% 20% 20% 20% 20%;
     grid-template-columns: 25% 25% 25% 25%;
-    right: 5px;
-    top: 5px;
-    width: 1254px;
-    height: 1050px;
+    right: 0.5vw;
+    top: 0.5vh;
+    width: 65.75vw;
+    height: 99vh;
     background-color: gray;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 .queue {
-    /*grid-template-columns: 50% 50%;*/
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 80%;
     background-color: #666666;
-    padding: 5px;
-    width: 617px;
-    height: 155px;
+    width: 31.75vw;
+    height: 20vh;
     position: relative;
-    left: 10px;
-    border-radius: 10px;
+    left: 0.5vw;
+    border-radius: var(--border-radius);
 }
 
 .lanes {
-    /*grid-template-columns: 50% 50%;*/
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 7.5% 92.5%;
     background-color: #666666;
-    padding: 5px;
+    width: 31.75vw;
+    height: 63vh;
+    position: relative;
+    left: 0.5vw;
+    border-radius: var(--border-radius);
 }
+
+
 
 .title {
     font-family: "Franklin Gothic Medium", sans-serif;
     text-align: center;
-    padding-top: 0;
-    padding-bottom: 10px;
-    height: 40px;
+    padding-bottom: 0.5vh;
+    height: 5vh;
+}
+
+.mini {
+    height: 0.5vh;
+    padding-bottom: 0vh;
+    margin-top: -0.75vh;
+}
+
+.next {
+    background-color: #444444;
+    margin: 5px;
+    border-radius: var(--border-radius);
+}
+
+.lane1 {
+    background-color: crimson;
+}
+
+.lane2 {
+    background-color: dodgerblue;
 }
