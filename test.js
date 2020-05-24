@@ -3,7 +3,7 @@ const test = require('ava')
 const {Vehicle, Driver} = require('./src/classes');
 
 let driver_test = new Driver("Marty McFly", "9303 Lyon Drive", "Hill Valley", "CA", 95420, 9168423138, "marty.mcfly@protonmail.com");
-let vehicle_test = new Vehicle("DeLorean", 1985, "Space grey", "Flux capacitor", "Timey Wimey", "Amblin Entertainment", "Time Travelers Anonymous")
+let vehicle_test = new Vehicle("DMC", "Delorean", 1985, "Space grey", "Flux capacitor", "Timey Wimey", "Amblin Entertainment", "Time Travelers Anonymous")
 
 
 test('foo', t => {
