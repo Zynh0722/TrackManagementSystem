@@ -5,27 +5,42 @@
     <meta charset="UTF-8">
     <title>Track Management System</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+    <meta http-equiv="Content-Security-Policy" content="script-s    rc 'self' 'unsafe-inline';"/>
 </head>
     <body>
 
-        <div id="pool">
-            <div class="empty">
-                <div class="fill" draggable="true"></div>
+        <div class="pool droppable">
+            <div class="driver" draggable="true">
+<!--                <p>1</p>-->
             </div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
-            <div class="empty"></div>
+            <div class="driver" draggable="true">
+<!--                <p>2</p>-->
+            </div>
+            <div class="driver" draggable="true">
+<!--                <p>3</p>-->
+            </div>
+            <div class="driver" draggable="true">
+<!--                <p>4</p>-->
+            </div>
+            <div class="driver" draggable="true">
+<!--                <p>5</p>-->
+            </div>
         </div>
 
-        <div id="leftPanel">
+        <div class="leftPanel">
             <div class="title">
                 <h1>Queue</h1>
             </div>
 
             <div class="queue">
-
+                <div class="mini title">
+                    <h2>Lane 1</h2>
+                </div>
+                <div class="mini title">
+                    <h2>Lane 2</h2>
+                </div>
+                <div class="next lane1 droppable"></div>
+                <div class="next lane2 droppable"></div>
             </div>
 
             <div class="title">
@@ -33,7 +48,14 @@
             </div>
 
             <div class="lanes">
-
+                <div class="mini title">
+                    <h2>Lane 1</h2>
+                </div>
+                <div class="mini title">
+                    <h2>Lane 2</h2>
+                </div>
+                <div class="next lane1 droppable"></div>
+                <div class="next lane2 droppable"></div>
             </div>
         </div>
 
