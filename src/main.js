@@ -11,8 +11,11 @@ function createWindow () {
             nodeIntegration: true,
             devTools: true
         },
-        fullscreen: true
+        fullscreen: true,
+        icon: "app_icon_64.png"
     });
+
+    require('./mainmenu')
 
     // win.setMenu(null);
     // win.removeMenu();
