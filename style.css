@@ -31,7 +31,7 @@ body {
     display: none;
 }
 
-#queue {
+#pool {
     position: absolute;
     display: grid;
     grid-template-rows: 20% 20% 20% 20% 20%;
