@@ -3,19 +3,21 @@ body {
 }
 
 .fill {
-    background-image: url("https://source.unsplash.com/random/400x135");
+    background-image: url("https://source.unsplash.com/random/235x135");
     position: relative;
     height: 135px;
-    width: 400px;
+    width: 235px;
     top: 5px;
     left: 5px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .empty {
     margin: 30px;
     border: 3px darkgrey solid;
     background-color: white;
+    border-radius: 10px;
 }
 
 .hold {
@@ -31,15 +33,49 @@ body {
     display: none;
 }
 
+#leftPanel {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 950px;
+    height: 1050px;
+    background-color: gray;
+    border-radius: 10px;
+}
+
 #pool {
     position: absolute;
     display: grid;
     grid-template-rows: 20% 20% 20% 20% 20%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33% 33% 33%;
     right: 5px;
     top: 5px;
     width: 950px;
     height: 1050px;
     background-color: gray;
     border-radius: 10px;
+}
+
+.queue {
+    /*grid-template-columns: 50% 50%;*/
+    background-color: #666666;
+    padding: 5px;
+    width: 940px;
+    position: relative;
+    left: 5px;
+
+}
+
+.lanes {
+    /*grid-template-columns: 50% 50%;*/
+    background-color: #666666;
+    padding: 5px;
+}
+
+.title {
+    font-family: "Franklin Gothic Medium", sans-serif;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 10px;
+    height: 40px;
 }
