@@ -5,6 +5,10 @@
 // selectively enable features needed in the rendering
 // process.
 
+const {Vehicle, Driver} = require('./src/classes');
+
+let vehicle_test = new Vehicle("DeLorean", 1985, "Space grey", "Flux capacitor", "Timey Wimey", "Amblin Entertainment", "Time Travelers Anonymous")
+
 const drivers = document.querySelectorAll('.driver');
 const droppables = document.querySelectorAll('.droppable');
 
@@ -26,7 +30,9 @@ function dragStart(driver) {
     pickedDriver = driver.target;
     setTimeout(() => this.className += ' hold', 10);
     setTimeout(() => this.className = 'invisible', 10);
-    console.log(pickedDriver);
+    vehicle_test.setAttributes(pickedDriver);
+    // var print = strong.substring(strong.indexOf("driver="), strong.indexOf("\">"));
+    // console.log(print);
 }
 
 function dragEnd() {

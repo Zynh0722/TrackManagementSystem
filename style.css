@@ -1,37 +1,29 @@
 :root {
     --border-radius: 10px;
+    --border-THICC: 7px;
 }
 
 body {
     background: #444444;
+    /*background-image: url("https://media0.giphy.com/media/13BwjdpxACoBPO/giphy.gif?cid=ecf05e477f18e347a65fd6573fd6073123e4f65deea259d7&rid=giphy.gif");*/
 }
 
 .driver {
-    /*background-image: url("https://source.unsplash.com/random/235x135");*/
+    /*background-image: url("https://media0.giphy.com/media/13BwjdpxACoBPO/giphy.gif?cid=ecf05e477f18e347a65fd6573fd6073123e4f65deea259d7&rid=giphy.gif");*/
     position: relative;
-    margin: 20px;
+    margin: 5px;
     /*top: 5px;*/
     /*left: 5px;*/
-    border: 3px darkgrey solid;
+    border: var(--border-THICC) darkgrey solid;
     cursor: pointer;
     border-radius: var(--border-radius);
 }
 
 .droppable {
-    border: 3px darkgrey solid;
+    border: var(--border-THICC) darkgrey solid;
 }
 
-#leftPanel {
-    position: absolute;
-    left: 0.5vw;
-    top: 0.5vh;
-    width: 32.75vw;
-    height: 99vh;
-    background-color: gray;
-    border-radius: var(--border-radius);
-}
-
-#pool {
+.pool {
     position: absolute;
     display: grid;
     grid-template-rows: 20% 20% 20% 20% 20%;
@@ -39,6 +31,19 @@ body {
     right: 0.5vw;
     top: 0.5vh;
     width: 65.75vw;
+    height: 99vh;
+    background-color: gray;
+    border-radius: var(--border-radius);
+    border: var(--border-THICC) gray solid;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.leftPanel {
+    position: absolute;
+    left: 0.5vw;
+    top: 0.5vh;
+    width: 32.75vw;
     height: 99vh;
     background-color: gray;
     border-radius: var(--border-radius);
@@ -87,6 +92,7 @@ body {
     background-color: #444444;
     margin: 5px;
     border-radius: var(--border-radius);
+    display: grid;
 }
 
 .lane1 {
@@ -103,7 +109,8 @@ body {
 
 .hovered {
     /*background: #f4f4f4;*/
-    border-style: dashed;
+    border: var(--border-THICC) darkgrey dashed;
+    box-sizing: border-box;
 }
 
 .invisible {
