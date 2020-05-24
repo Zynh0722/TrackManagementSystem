@@ -23,5 +23,9 @@
   },
   "dependencies": {
     "lodash": "^4.17.15"
+    "electron": "^8.2.1"
+  },
+  "dependencies": {
+    "@shopify/draggable": "^1.0.0-beta.8"
   }
 }
