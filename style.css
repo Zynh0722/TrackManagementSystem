@@ -3,10 +3,10 @@ body {
 }
 
 .fill {
-    background-image: url("https://source.unsplash.com/random/100x100");
+    background-image: url("https://source.unsplash.com/random/400x135");
     position: relative;
-    height: 100px;
-    width: 100px;
+    height: 135px;
+    width: 400px;
     top: 5px;
     left: 5px;
     cursor: pointer;
@@ -39,7 +39,7 @@ body {
     right: 5px;
     top: 5px;
     width: 950px;
-    height: 1070px;
+    height: 1050px;
     background-color: gray;
     border-radius: 10px;
 }
