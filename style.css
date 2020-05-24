@@ -61,11 +61,11 @@ body {
 .queue {
     /*grid-template-columns: 50% 50%;*/
     background-color: #666666;
-    padding: 5px;
-    width: 617px;
-    height: 155px;
+
+    width: 31.75vw;
+    height: 20vh;
     position: relative;
-    left: 10px;
+    left: 0.5vw;
     border-radius: 10px;
 }
 
