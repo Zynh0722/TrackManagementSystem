@@ -20,5 +20,5 @@ test('driver_sanity', t => {
 });
 
 test('vehicle_sanity', t => {
-    t.assert(vehicle_test.nomo === "Timey Wimey" && vehicle_test.engine === "Flux capacitor")
+    t.assert(vehicle_test.carNomo === "Timey Wimey" && vehicle_test.engine === "Flux capacitor")
 });
