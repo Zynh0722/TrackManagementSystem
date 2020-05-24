@@ -34,7 +34,8 @@ const template = [
                 role: 'selectall'
             },
             {
-                label: 'Open File'
+                label: 'Open File',
+                click: function() {console.log("Open File clicked")}
             }
         ]
     },
@@ -44,14 +45,14 @@ const template = [
             {
                 label: 'Reload',
                 accelerator: 'CmdOrCtrl+R',
-                click (item, focusedWindow) {
+                click(item, focusedWindow) {
                     if (focusedWindow) focusedWindow.reload()
                 }
             },
             {
                 label: 'Toggle Developer Tools',
                 accelerator: process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-                click (item, focusedWindow) {
+                click(item, focusedWindow) {
                     if (focusedWindow) focusedWindow.webContents.toggleDevTools()
                 }
             },
@@ -91,7 +92,9 @@ const template = [
         submenu: [
             {
                 label: 'Learn More',
-                click () { require('electron').shell.openExternal('http://electron.atom.io') }
+                click() {
+                    require('electron').shell.openExternal('http://electron.atom.io')
+                }
             }
         ]
     }
