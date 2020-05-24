@@ -5,35 +5,35 @@
 // selectively enable features needed in the rendering
 // process.
 
-const driver = document.querySelector('.driver');
-const empties = document.querySelectorAll('.empty');
+const drivers = document.querySelectorAll('.driver');
+const droppables = document.querySelectorAll('.droppable');
 
-var pickedADriver = false;
+var pickedDriver = null;
 
-driver.addEventListener('dragstart', dragStart);
-driver.addEventListener('dragend', dragEnd);
-
-for (const empty of  empties) {
-    empty.addEventListener('dragover', dragOver);
-    empty.addEventListener('dragenter', dragEnter);
-    empty.addEventListener('dragleave', dragLeave);
-    empty.addEventListener('drop', dragDrop);
+for (const driver of drivers) {
+    driver.addEventListener('dragstart', dragStart);
+    driver.addEventListener('dragend', dragEnd);
 }
 
-function dragStart() {
-    console.log("dragStart");
-    if (this.contains(driver)) {
-        pickedADriver = true;
-        console.log("HAS A DRIVER");
-        this.className += ' hold';
-        setTimeout(() => this.className = 'invisible', 10);
-    }
+for (const droppable of droppables) {
+    droppable.addEventListener('dragover', dragOver);
+    droppable.addEventListener('dragenter', dragEnter);
+    droppable.addEventListener('dragleave', dragLeave);
+    droppable.addEventListener('drop', dragDrop);
+}
+
+function dragStart(driver) {
+    pickedDriver = driver.target;
+    setTimeout(() => this.className += ' hold', 10);
+    setTimeout(() => this.className = 'invisible', 10);
+    console.log(pickedDriver);
 }
 
 function dragEnd() {
     console.log("dragEnd");
     this.className = 'driver';
-    pickedADriver = false;
+    pickedDriver = null;
+    // pickedADriver = false;
 }
 
 function dragOver(e) {
@@ -42,26 +42,26 @@ function dragOver(e) {
 }
 
 function dragEnter(e) {
-    if(pickedADriver) {
+    // if (pickedADriver) {
         console.log("dragEnter");
         e.preventDefault();
         this.className += ' hovered';
-    }
+    // }
 }
 
 function dragLeave() {
-    if (pickedADriver) {
+    // if (pickedADriver) {
         console.log("dragLeave");
-        this.className = 'empty';
-    }
+        this.className = this.className.substr(0, this.className.lastIndexOf(" "));
+    // }
 }
 
 function dragDrop() {
-    if(pickedADriver) {
+    // if (pickedADriver) {
         console.log("dragDrop");
-        this.className = 'empty';
-        this.append(driver);
-    }
+        this.className = this.className.substr(0, this.className.lastIndexOf(" "));
+        this.append(pickedDriver);
+    // }
 }
 
 

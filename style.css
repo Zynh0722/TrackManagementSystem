@@ -7,36 +7,18 @@ body {
 }
 
 .driver {
-    background-image: url("https://source.unsplash.com/random/235x135");
+    /*background-image: url("https://source.unsplash.com/random/235x135");*/
     position: relative;
-    height: 135px;
-    width: 235px;
-    margin: 5px;
+    margin: 20px;
     /*top: 5px;*/
     /*left: 5px;*/
+    border: 3px darkgrey solid;
     cursor: pointer;
     border-radius: var(--border-radius);
 }
 
-.empty {
-    display: grid;
-    margin: 20px;
+.droppable {
     border: 3px darkgrey solid;
-    background-color: white;
-    border-radius: var(--border-radius);
-}
-
-.hold {
-    border: solid #ccc 4px;
-}
-
-.hovered {
-    background: #f4f4f4;
-    border-style: dashed;
-}
-
-.invisible {
-    display: none;
 }
 
 #leftPanel {
@@ -113,4 +95,17 @@ body {
 
 .lane2 {
     background-color: dodgerblue;
+}
+
+.hold {
+    border: solid #ccc 4px;
+}
+
+.hovered {
+    /*background: #f4f4f4;*/
+    border-style: dashed;
+}
+
+.invisible {
+    display: none;
 }
