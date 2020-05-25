@@ -7,38 +7,42 @@ function load_drivers(driver_file) {
 
         let drivers_list = []
 
-        for (let line of data.split("\n")){
+        for (let line of data.split("\n")) {
+            let words = line.split(",")
             drivers_list.push(new Driver(
-                line[0],
-                line[1],
-                line[2],
-                line[3],
-                line[4],
-                line[5],
-                line[6]
+                words[0],
+                words[1],
+                words[2],
+                words[3],
+                words[4],
+                words[5],
+                words[6]
             ))
         }
+
+        console.log(drivers_list)
 
         return drivers_list
     })
 }
 
-function load_vehicles(vehicles_file) {
+function load_vehicles(vehicle_file) {
     fs.readFile(vehicle_file, 'utf-8', (err, data) => {
         if (err) throw err;
 
         let vehicles_list = []
 
         for (let line of data.split("\n")){
+            let words = line.split(",")
             vehicles_list.push(new Vehicle(
-                line[0],
-                line[1],
-                line[2],
-                line[3],
-                line[4],
-                line[5],
-                line[6],
-                line[7]
+                words[0],
+                words[1],
+                words[2],
+                words[3],
+                words[4],
+                words[5],
+                words[6],
+                words[7]
             ))
         }
 
@@ -46,5 +50,7 @@ function load_vehicles(vehicles_file) {
     })
 }
 
-module.exports = load_drivers
-module.exports = load_vehicles
+module.exports = {
+    load_vehicles,
+    load_drivers
+}

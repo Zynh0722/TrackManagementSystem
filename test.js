@@ -1,7 +1,8 @@
 const test = require('ava')
 
 const {Vehicle, Driver} = require('./src/classes');
-const {load_vehicles, load_drivers} = require('./src/import_export');
+const import_export = require('./src/import_export');
+
 
 let driver_test = new Driver("Marty McFly", "9303 Lyon Drive", "Hill Valley", "CA", 95420, 9168423138, "marty.mcfly@protonmail.com");
 let vehicle_test = new Vehicle("DMC", "Delorean", 1985, "Space grey", "Flux capacitor", "Timey Wimey", "Amblin Entertainment", "Time Travelers Anonymous")
@@ -25,10 +26,14 @@ test('vehicle_sanity', t => {
 });
 
 test('test_load_vehicle', t => {
-    t.assert(vehicle_test.carNomo === load_vehicles("./src/test_vehicles.csv")[0].carNomo)
+    let tested_vehicle = import_export.load_vehicles("./src/test_vehicles.csv")[0]
+    t.assert(vehicle_test.carNomo === tested_vehicle.carNomo)
 })
 
 test('test_load_driver', t => {
-    t.assert(driver_test.zip_code === load_drivers("./src/test_drivers.csv")[0].zip_code)
+    t.assert(driver_test.zip_code === import_export.load_drivers("./src/test_drivers.csv")[0].zip_code)
 })
 
+test('amistupid', t => {
+    t.assert(import_export.load_drivers("./src/test_drivers.csv") === undefined)
+})
