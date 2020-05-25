@@ -30,6 +30,7 @@ body {
     margin: auto;
     text-align: center;
     display: grid;
+    pointer-events: none;
 }
 
 .number {

@@ -7,7 +7,7 @@
 
 const {Vehicle, Driver} = require('./src/classes');
 
-let vehicle_test = new Vehicle("DeLorean", 1985, "Space grey", "Flux capacitor", "Timey Wimey", "Amblin Entertainment", "Time Travelers Anonymous")
+let vehicle_test = new Vehicle("DMC", "DeLorean", 1985, "Space grey", "Flux capacitor", "Timey Wimey", "Amblin Entertainment", "Time Travelers Anonymous")
 
 const drivers = document.querySelectorAll('.driver');
 const droppables = document.querySelectorAll('.droppable');
@@ -17,7 +17,7 @@ var pickedDriver = null;
 for (const driver of drivers) {
     driver.addEventListener('dragstart', dragStart);
     driver.addEventListener('dragend', dragEnd);
-    // driver.addEventListener('dblclick', DblClick)
+    driver.addEventListener('dblclick', DblClick)
 }
 
 for (const droppable of droppables) {
@@ -26,20 +26,22 @@ for (const droppable of droppables) {
     droppable.addEventListener('dragleave', dragLeave);
     droppable.addEventListener('drop', dragDrop);
 }
-//
-// function DblClick(e) {
-//     if(e.target.parentElement.className !== "pool") {
-//         e.target.parentElement.className = e.target.parentElement.className.replace(" filled", "");
-//         document.getElementsByClassName("pool")[0].append(e.target);
-//     }
-// }
+
+function DblClick(e) {
+    console.log("DBLCLICK")
+    if(e.target.parentElement.className !== "pool") {
+        e.target.parentElement.className = e.target.parentElement.className.replace(" filled", "");
+        document.getElementsByClassName("pool")[0].append(e.target);
+    }
+}
 
 function dragStart(driver) {
     pickedDriver = driver.target;
     setTimeout(() => this.className += ' hold', 10);
     setTimeout(() => this.className = 'invisible', 10);
     driver.target.parentElement.className = driver.target.parentElement.className.replace(" filled", "");
-    // vehicle_test.setAttributes(pickedDriver);
+
+    vehicle_test.setAttributes(pickedDriver);
     // var print = strong.substring(strong.indexOf("driver="), strong.indexOf("\">"));
     // console.log(print);
 }
