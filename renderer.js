@@ -17,6 +17,7 @@ var pickedDriver = null;
 for (const driver of drivers) {
     driver.addEventListener('dragstart', dragStart);
     driver.addEventListener('dragend', dragEnd);
+    // driver.addEventListener('dblclick', DblClick)
 }
 
 for (const droppable of droppables) {
@@ -25,49 +26,56 @@ for (const droppable of droppables) {
     droppable.addEventListener('dragleave', dragLeave);
     droppable.addEventListener('drop', dragDrop);
 }
+//
+// function DblClick(e) {
+//     if(e.target.parentElement.className !== "pool") {
+//         e.target.parentElement.className = e.target.parentElement.className.replace(" filled", "");
+//         document.getElementsByClassName("pool")[0].append(e.target);
+//     }
+// }
 
 function dragStart(driver) {
     pickedDriver = driver.target;
     setTimeout(() => this.className += ' hold', 10);
     setTimeout(() => this.className = 'invisible', 10);
-    vehicle_test.setAttributes(pickedDriver);
+    driver.target.parentElement.className = driver.target.parentElement.className.replace(" filled", "");
+    // vehicle_test.setAttributes(pickedDriver);
     // var print = strong.substring(strong.indexOf("driver="), strong.indexOf("\">"));
     // console.log(print);
 }
 
 function dragEnd() {
-    console.log("dragEnd");
+    // console.log("dragEnd");
     this.className = 'driver';
     pickedDriver = null;
-    // pickedADriver = false;
 }
 
 function dragOver(e) {
-    console.log("dragOver");
+    // console.log("dragOver");
     e.preventDefault();
 }
 
 function dragEnter(e) {
-    // if (pickedADriver) {
-        console.log("dragEnter");
-        e.preventDefault();
-        this.className += ' hovered';
+    // console.log("dragEnter");
+    e.preventDefault();
+    // if(!this.classList.contains("filled")) {
+    this.className += ' hovered';
     // }
 }
 
 function dragLeave() {
-    // if (pickedADriver) {
-        console.log("dragLeave");
-        this.className = this.className.substr(0, this.className.lastIndexOf(" "));
-    // }
+    // console.log("dragLeave");
+    this.className = this.className.split(" hovered").join("");
 }
 
-function dragDrop() {
-    // if (pickedADriver) {
-        console.log("dragDrop");
-        this.className = this.className.substr(0, this.className.lastIndexOf(" "));
+function dragDrop(e) {
+    console.log("dragDrop");
+    if (!this.classList.contains("filled")) {
         this.append(pickedDriver);
-    // }
+        this.className = this.className.replace(" hovered", "");
+        if (!this.classList.contains("pool")) {
+            this.className += " filled"
+        }
+    }
 }
-
 

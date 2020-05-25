@@ -1,22 +1,39 @@
 :root {
     --border-radius: 10px;
     --border-THICC: 7px;
+    font-family: "Franklin Gothic Medium", sans-serif;
 }
 
 body {
     background: #444444;
-    /*background-image: url("https://media0.giphy.com/media/13BwjdpxACoBPO/giphy.gif?cid=ecf05e477f18e347a65fd6573fd6073123e4f65deea259d7&rid=giphy.gif");*/
 }
 
 .driver {
-    /*background-image: url("https://media0.giphy.com/media/13BwjdpxACoBPO/giphy.gif?cid=ecf05e477f18e347a65fd6573fd6073123e4f65deea259d7&rid=giphy.gif");*/
     position: relative;
     margin: 5px;
+    grid-template-columns: 45% 55%;
+    display: grid;
     /*top: 5px;*/
     /*left: 5px;*/
     border: var(--border-THICC) darkgrey solid;
     cursor: pointer;
     border-radius: var(--border-radius);
+}
+
+.truck {
+    vertical-align: center;
+    display: grid;
+}
+
+.smallinfo {
+    font-size: xx-large;
+    margin: auto;
+    text-align: center;
+    display: grid;
+}
+
+.number {
+    font-size: 7.5vh;
 }
 
 .droppable {
@@ -116,3 +133,5 @@ body {
 .invisible {
     display: none;
 }
+
+
