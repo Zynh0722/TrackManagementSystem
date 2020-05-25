@@ -2,6 +2,8 @@ const {Menu} = require('electron')
 const electron = require('electron')
 const app = electron.app
 
+const load_drivers = require("./import_export")
+
 const template = [
     {
         label: 'Edit',
@@ -35,7 +37,7 @@ const template = [
             },
             {
                 label: 'Open File',
-                click: function() {console.log("Open File clicked")}
+                click: function() { load_drivers("./src/test_drivers.csv") }
             }
         ]
     },
