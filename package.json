@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Zynh0722/TrackManagementSystem#readme",
   "devDependencies": {
     "ava": "^3.8.1",
-    "electron": "^8.1.1"
+    "electron": "^11.5.0"
   },
   "dependencies": {
     "lodash": "^4.17.15"
